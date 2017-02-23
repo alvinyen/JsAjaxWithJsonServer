@@ -9,6 +9,7 @@ module.exports = function(){
     authorsArray.forEach(function(author){
         author.articles.forEach(function(article){
             articleList.push( {
+                id : article.articleId ,
                 articleId : article.articleId ,
                 title : article.title
             } ) ;
@@ -19,6 +20,7 @@ module.exports = function(){
     authorsArray.forEach(function(author){
         author.articles.forEach(function(article){
             articles.push( {
+                id : article.articleId ,
                 authorId : author.authorId ,
                 articleId : article.articleId ,
                 title : article.title ,
@@ -31,6 +33,7 @@ module.exports = function(){
     var authors = [] ;
     authorsArray.forEach(function(author){
         authors.push( {
+            id : author.authorId ,
             authorId : author.authorId ,
             numberOfArticles : author.articles.length ,
             authorName : author.authorName ,
@@ -42,13 +45,6 @@ module.exports = function(){
         articleList : articleList ,
         articles : articles ,
         authors : authors
-        // author : _.times(8, function(index){
-        //     return {
-        //         id: index,
-        //         name: faker.name.findName() ,
-        //         address : faker.internet.email()
-        //     } ;
-        // })
     }
 }
 
